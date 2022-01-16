@@ -9,4 +9,8 @@ class QuotesController < Rulers::Controller
   def exception
     raise "It's a bad exception!"
   end
+
+  def another_method
+    'Another method'
+  end
 end
