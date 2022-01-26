@@ -5,6 +5,12 @@ class QuotesController < Rulers::Controller
     render :index, quotes: quotes
   end
 
+  def show
+    quote = FileModel.find(params['id'])
+    user_agent = request.user_agent
+    render :quote, obj: quote, ua: user_agent
+  end
+
   def update
     raise 'Only POST to this route!' unless env['REQUEST_METHOD'] == 'POST'
 
